@@ -8,5 +8,80 @@
 </head>
 <body>
 
+<!-- ЭКРАН ПРИВЕТСТВИЯ -->
+<div id="welcome-screen" class="screen active">
+    <div class="welcome-container">
+        <h1 class="welcome-logo">🎬 Кино<span>поиск</span></h1>
+        <p class="welcome-tagline">Откройте мир кино для себя</p>
+
+        <div class="welcome-form">
+            <label for="user-name-input">Как вас зовут?</label>
+            <input
+                type="text"
+                id="user-name-input"
+                placeholder="Введите ваше имя"
+                autocomplete="name"
+                autofocus>
+            <button id="start-btn">Начать →</button>
+        </div>
+    </div>
+</div>
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
+<div id="main-screen" class="screen">
+
+    <!-- Шапка -->
+    <header>
+        <div class="header-logo">🎬 Кино<span>поиск</span> Lite</div>
+        <div id="greeting-message"></div>
+    </header>
+
+    <!-- Панель управления -->
+    <div class="controls">
+
+        <!-- Поиск + сортировка + кнопки -->
+        <div class="controls-row">
+            <div class="search-group">
+                <input type="text" id="search-input" placeholder="Поиск фильмов...">
+                <button id="search-btn">🔍 Найти</button>
+            </div>
+
+            <div class="sort-group">
+                <label for="sort-select">Сортировка</label>
+                <select id="sort-select">
+                    <option value="rating.kp">По рейтингу</option>
+                    <option value="year">По году</option>
+                    <option value="votes">По популярности</option>
+                </select>
+            </div>
+
+            <div class="action-group">
+                <button id="load-more-btn" class="btn">Загрузить ещё</button>
+                <button id="show-stats-btn" class="btn">📊 Статистика</button>
+            </div>
+        </div>
+
+        <!-- Жанры -->
+        <div class="filter-section">
+            <span class="filter-label">🎭 Жанры</span>
+            <div id="genre-checkboxes"></div>
+        </div>
+
+    </div>
+
+    <!-- Сетка фильмов -->
+    <div id="movies-container"></div>
+
+    <!-- Модальное окно -->
+    <div id="stats-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="stats-content"></div>
+        </div>
+    </div>
+
+</div>
+
+<script type="module" src="js/app.js"></script>
 </body>
 </html>
